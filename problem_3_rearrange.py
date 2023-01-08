@@ -8,7 +8,7 @@ def rearrange_digits(input_list: list[int]) -> list[int]:
     Returns:
        (int),(int): Two maximum sums
     """
-    input_list.sort()
+    input_list = quicksort(input_list)
     first_num = splitter(input_list, len(input_list)-1)
     second_num = splitter(input_list, len(input_list)-2)
     return [first_num, second_num]
@@ -20,6 +20,16 @@ def splitter(input_list: list[int], cut_index: int) -> int:
         value = value*10 + input_list[cut_index]
         cut_index -= 2
     return value
+
+
+def quicksort(input_list: list[int]) -> list[int]:
+    if len(input_list) < 2:
+        return input_list
+    else:
+        pivot = input_list[0]
+        first_half = [num for num in input_list[1:] if num <= pivot]
+        second_half = [num for num in input_list[1:] if num > pivot]
+        return quicksort(first_half) + [pivot] + quicksort(second_half)
 
 
 def test_function(test_case):
