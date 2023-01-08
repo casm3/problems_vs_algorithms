@@ -1,4 +1,4 @@
-def rearrange_digits(input_list):
+def rearrange_digits(input_list: list[int]) -> list[int]:
     """
     Rearrange Array Elements so as to form two
     number such that their sum is maximum.
@@ -8,7 +8,18 @@ def rearrange_digits(input_list):
     Returns:
        (int),(int): Two maximum sums
     """
-    pass
+    input_list.sort()
+    first_num = splitter(input_list, len(input_list)-1)
+    second_num = splitter(input_list, len(input_list)-2)
+    return [first_num, second_num]
+
+
+def splitter(input_list: list[int], cut_index: int) -> int:
+    value = 0
+    while cut_index >= 0:
+        value = value*10 + input_list[cut_index]
+        cut_index -= 2
+    return value
 
 
 def test_function(test_case):
@@ -21,4 +32,4 @@ def test_function(test_case):
 
 
 test_function([[1, 2, 3, 4, 5], [542, 31]])
-test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
+test_case = [[1, 2, 3, 4, 5], [964, 852]]
