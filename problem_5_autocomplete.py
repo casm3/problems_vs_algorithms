@@ -25,7 +25,7 @@ class TrieNode:
             return suffix_list
 
         for char in self.children:
-            suffix_list.extend(self.children[char].suffixes(suffix + char))
+            suffix_list += self.children[char].suffixes(suffix + char)
         return suffix_list
 
 

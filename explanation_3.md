@@ -4,4 +4,4 @@ Here a well known divide and conquer algorithms was used to sort the given input
 
 Another help function named splitter was applied to the sorted array to find the max first and second number that can be made from the array.
 
-Once again the space complexity is O(n), we are dealing with an array of integers. Also integers variables were used, but with almost no impact over the overall space complexity, O(n) grows quickly than O(3).
+Once again the space complexity is O(1), we are dealing with a few integer variables.
