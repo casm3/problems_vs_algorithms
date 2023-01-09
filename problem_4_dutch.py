@@ -6,9 +6,9 @@ def sort_012(arr: list[int]):
     Args:
        input_list(list): List to be sorted
     """
-    low = 0
-    high = len(arr) - 1
-    pivot = 0
+    low: int = 0
+    high: int = len(arr) - 1
+    pivot: int = 0
 
     while pivot <= high:
         if arr[pivot] == 0:
@@ -25,7 +25,6 @@ def sort_012(arr: list[int]):
 
 def test_function(test_case):
     sorted_array = sort_012(test_case)
-    print(sorted_array)
     if sorted_array == sorted(test_case):
         print("Pass")
     else:
@@ -34,7 +33,13 @@ def test_function(test_case):
 
 test_function([0, 0, 2, 2, 2, 1, 1, 1, 2, 0, 2])
 test_function(
-    [2, 1, 2, 0, 0, 2, 1, 0, 1, 0, 0, 2, 2, 2,
-        1, 2, 0, 0, 0, 2, 1, 0, 2, 0, 0, 1]
+    [
+        2, 1, 2, 0, 0, 2, 1, 0, 1,
+        0, 0, 2, 2, 2, 1, 2, 0, 0,
+        0, 2, 1, 0, 2, 0, 0, 1
+    ]
 )
 test_function([0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2])
+test_function([2, 2, 2, 2, 1, 1, 1, 1, 0, 0, 0])
+test_function([1])
+test_function([])

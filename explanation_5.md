@@ -7,3 +7,5 @@ And the only additional method here was the suffixes.
 The average time complexity to find or insert an element here is O(1), relying on a hashmap as base data-structure.
 
 Already the suffix method may take O(n) in the given implementation. Sets could have been used to reduce this complexity to O(1) as well.
+
+The Space complexity for the Trie problem is O(n*k), where n is for the nodes that can point to k other nodes. This may surpass the O(m) for the suffix list.

@@ -1,5 +1,7 @@
 # Square Root
 
-The square root of a number can be found through exponentiation. So just by adding the double asterisk operator to the given number we may conclude this task em O(1) time.
+The square root of an integer number can be found through [Newton's Method](https://en.wikipedia.org/wiki/Newton%27s_method) in O(log(n)) time complexity.
 
-We also casted the obtained result to int in order to provide the integer square root of a number.
+Also, the _//_ was used to pick up only the integer part of the division. A cast could have been used.
+
+Three integers variables were used, and this number will be used for sqrt of either 10, 100, 1000000. So O(1) space complexity.

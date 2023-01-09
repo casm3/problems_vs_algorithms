@@ -70,6 +70,9 @@ class Router:
         # return the "not found" handler if you added one
         # bonus points if a path works with and without a trailing slash
         # e.g. /about and /about/ both return the /about handler
+        if not path:
+            return None
+
         urls = self.split_path(path)
 
         if not urls:
@@ -85,6 +88,7 @@ class Router:
         # you need to split the path into parts for
         # both the add_handler and lookup functions,
         # so it should be placed in a function here
+
         return [part for part in path.split("/") if part]
 
 
@@ -108,3 +112,7 @@ print(router.lookup("/home/about"))
 print(router.lookup("/home/about/"))
 # should print 'not found handler' or None if you did not implement one
 print(router.lookup("/home/about/me"))
+# should print 'not found handler'
+print(router.lookup(None))
+print(router.lookup([]))
+print(router.lookup(dict()))

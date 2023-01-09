@@ -9,15 +9,15 @@ def rearrange_digits(input_list: list[int]) -> list[int]:
        (int),(int): Two maximum sums
     """
     input_list = quicksort(input_list)
-    first_num = splitter(input_list, len(input_list)-1)
-    second_num = splitter(input_list, len(input_list)-2)
+    first_num: int = splitter(input_list, len(input_list) - 1)
+    second_num: int = splitter(input_list, len(input_list) - 2)
     return [first_num, second_num]
 
 
 def splitter(input_list: list[int], cut_index: int) -> int:
-    value = 0
+    value: int = 0
     while cut_index >= 0:
-        value = value*10 + input_list[cut_index]
+        value = value * 10 + input_list[cut_index]
         cut_index -= 2
     return value
 
@@ -41,5 +41,13 @@ def test_function(test_case):
         print("Fail")
 
 
-test_function([[1, 2, 3, 4, 5], [542, 31]])
-test_case = [[1, 2, 3, 4, 5], [964, 852]]
+test_case = [[1, 2, 3, 4, 5], [542, 31]]
+test_function(test_case)
+test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
+test_function(test_case)
+test_case = [[], []]
+test_function(test_case)
+test_case = [[1], [1]]
+test_function(test_case)
+test_case = [[1, 2], [2, 1]]
+test_function(test_case)
